@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGI Ltd. - Employee Services - @ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald|Cinzel' rel='stylesheet' type='text/css'>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Employee Services", "Index", "Hourly", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Time Tracker<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/Hourly/SubmitTime">Submit Time</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Policies<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/Hourly/ViewPolicies">View Policies</a></li>
+                            @*<li role="separator" class="divider"></li>*@
+                            @*<li><a href="~/Hr/ManagePolicies">Manage Policies</a></li>*@
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("HR", "Index", "Hr")</li>
+                   <li>@Html.ActionLink("Public", "Index", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer class="welcomefoot">
+            <div class="copyright">
+                <p>&copy; @DateTime.Now.Year SG Industries Ltd.</p>
+            </div>
+            <div class="quote">"You get hurt, hurt 'em back. You get killed... walk it off. - Steve Rogers</div>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

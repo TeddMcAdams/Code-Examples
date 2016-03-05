@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<policies>
+    <policy>
+        <policyId>1</policyId>
+        <categoryId>1</categoryId>
+        <title>Internal Purchase Orders</title>
+        <content>All purchases must have a purchase order filled out and approved. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nulla purus, vestibulum at ex ut, volutpat ullamcorper est. Fusce ac diam nec tortor vulputate interdum eget eget diam. Phasellus a enim nulla. Quisque pulvinar urna metus, sed ornare magna mattis a. Sed enim velit, faucibus eu odio ut, pretium faucibus ex. In dignissim nisl sed leo tempor posuere. Curabitur tempus, nisi non tincidunt blandit, mi ligula mollis sem, ac ultricies libero tellus a metus. In scelerisque, velit in scelerisque dignissim, elit ligula cursus nisl, pellentesque malesuada justo orci in leo. Vivamus dolor nunc, consequat at tristique et, pharetra id tellus. Maecenas blandit metus eu elit eleifend, at dignissim quam consequat. Maecenas feugiat mi quis scelerisque auctor.</content>
+    </policy>
+    <policy>
+        <policyId>2</policyId>
+        <categoryId>1</categoryId>
+        <title>Travel Expenses</title>
+        <content>Only documented expenses with receipts will be reimbursed. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nulla purus, vestibulum at ex ut, volutpat ullamcorper est. Fusce ac diam nec tortor vulputate interdum eget eget diam. Phasellus a enim nulla. Quisque pulvinar urna metus, sed ornare magna mattis a. Sed enim velit, faucibus eu odio ut, pretium faucibus ex. In dignissim nisl sed leo tempor posuere. Curabitur tempus, nisi non tincidunt blandit, mi ligula mollis sem, ac ultricies libero tellus a metus. In scelerisque, velit in scelerisque dignissim, elit ligula cursus nisl, pellentesque malesuada justo orci in leo. Vivamus dolor nunc, consequat at tristique et, pharetra id tellus. Maecenas blandit metus eu elit eleifend, at dignissim quam consequat. Maecenas feugiat mi quis scelerisque auctor.</content>
+    </policy>
+    <policy>
+        <policyId>3</policyId>
+        <categoryId>2</categoryId>
+        <title>Harassment</title>
+        <content>Zero tolerance for harassment of any kind. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nulla purus, vestibulum at ex ut, volutpat ullamcorper est. Fusce ac diam nec tortor vulputate interdum eget eget diam. Phasellus a enim nulla. Quisque pulvinar urna metus, sed ornare magna mattis a. Sed enim velit, faucibus eu odio ut, pretium faucibus ex. In dignissim nisl sed leo tempor posuere. Curabitur tempus, nisi non tincidunt blandit, mi ligula mollis sem, ac ultricies libero tellus a metus. In scelerisque, velit in scelerisque dignissim, elit ligula cursus nisl, pellentesque malesuada justo orci in leo. Vivamus dolor nunc, consequat at tristique et, pharetra id tellus. Maecenas blandit metus eu elit eleifend, at dignissim quam consequat. Maecenas feugiat mi quis scelerisque auctor.</content>
+    </policy>
+    <policy>
+        <policyId>4</policyId>
+        <categoryId>2</categoryId>
+        <title>Acceptable Attire</title>
+        <content>Business casual every day. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nulla purus, vestibulum at ex ut, volutpat ullamcorper est. Fusce ac diam nec tortor vulputate interdum eget eget diam. Phasellus a enim nulla. Quisque pulvinar urna metus, sed ornare magna mattis a. Sed enim velit, faucibus eu odio ut, pretium faucibus ex. In dignissim nisl sed leo tempor posuere. Curabitur tempus, nisi non tincidunt blandit, mi ligula mollis sem, ac ultricies libero tellus a metus. In scelerisque, velit in scelerisque dignissim, elit ligula cursus nisl, pellentesque malesuada justo orci in leo. Vivamus dolor nunc, consequat at tristique et, pharetra id tellus. Maecenas blandit metus eu elit eleifend, at dignissim quam consequat. Maecenas feugiat mi quis scelerisque auctor.</content>
+    </policy>
+    <policy>
+        <policyId>5</policyId>
+        <categoryId>3</categoryId>
+        <title>Spill Cleanup</title>
+        <content>Clean up all spills right away. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nulla purus, vestibulum at ex ut, volutpat ullamcorper est. Fusce ac diam nec tortor vulputate interdum eget eget diam. Phasellus a enim nulla. Quisque pulvinar urna metus, sed ornare magna mattis a. Sed enim velit, faucibus eu odio ut, pretium faucibus ex. In dignissim nisl sed leo tempor posuere. Curabitur tempus, nisi non tincidunt blandit, mi ligula mollis sem, ac ultricies libero tellus a metus. In scelerisque, velit in scelerisque dignissim, elit ligula cursus nisl, pellentesque malesuada justo orci in leo. Vivamus dolor nunc, consequat at tristique et, pharetra id tellus. Maecenas blandit metus eu elit eleifend, at dignissim quam consequat. Maecenas feugiat mi quis scelerisque auctor.</content>
+    </policy>
+    <policy>
+        <policyId>6</policyId>
+        <categoryId>3</categoryId>
+        <title>Forklift Operation</title>
+        <content>Drive in a safe manner. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nulla purus, vestibulum at ex ut, volutpat ullamcorper est. Fusce ac diam nec tortor vulputate interdum eget eget diam. Phasellus a enim nulla. Quisque pulvinar urna metus, sed ornare magna mattis a. Sed enim velit, faucibus eu odio ut, pretium faucibus ex. In dignissim nisl sed leo tempor posuere. Curabitur tempus, nisi non tincidunt blandit, mi ligula mollis sem, ac ultricies libero tellus a metus. In scelerisque, velit in scelerisque dignissim, elit ligula cursus nisl, pellentesque malesuada justo orci in leo. Vivamus dolor nunc, consequat at tristique et, pharetra id tellus. Maecenas blandit metus eu elit eleifend, at dignissim quam consequat. Maecenas feugiat mi quis scelerisque auctor.</content>
+    </policy>
+</policies>

@@ -1,0 +1,29 @@
+﻿@using HRPortal.BLL
+@model List<HRPortal.Models.Application>
+
+@{
+    ViewBag.Title = "Applications";
+    Layout = "~/Views/Shared/_Internal.cshtml";
+}
+
+<div class="panel-group" id="accordion">
+    <div class="applicant">
+        <h1 class="apptitle">APPLICANTS</h1>
+    </div>
+
+    @foreach (var application in Model)
+    {
+        ViewData["LiUrl"] = Utilities.AddHttp(application.LinkedIn);
+        @Html.Partial("_Application", application)
+    }
+</div>
+
+@section scripts
+{
+    <script>
+        function toggleEdit(display, edit) {
+            document.getElementById(display).style.display = 'none';
+            document.getElementById(edit).style.display = 'block';
+        }
+    </script>
+}

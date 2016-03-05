@@ -1,0 +1,21 @@
+﻿@using HRPortal.UI.Models
+@model List<HRPortal.UI.Models.EmployeeAndTimeSheetsVm>
+
+@{
+    ViewBag.Title = "ViewTimeSheets";
+    Layout = "~/Views/Shared/_Internal.cshtml";
+}
+
+
+<div class="panel-group" id="accordion">
+    <div class="policy">
+        <h1 class="poltitle">View Time Sheets</h1>
+    </div>
+
+
+    @foreach (EmployeeAndTimeSheetsVm employee in Model)
+    {
+        @Html.Partial("_Employee", employee)
+    }
+
+</div>

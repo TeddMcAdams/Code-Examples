@@ -1,0 +1,50 @@
+﻿@using System.Web.Hosting
+@using System.Web.UI.WebControls
+@using BaseballLeague.MODELS
+@model Team
+
+@{
+    ViewBag.Title = $"Team Details - {Model.Name}";
+}
+
+<div class="jumbotron">
+    @if (File.Exists(HostingEnvironment.MapPath($"/Content/Images/{Model.Name}-xs.png")))
+    {
+        <img src="@($"/Content/Images/{Model.Name}-xs.png")" alt="@($"{Model.Name} Team Logo")" class="img-responsive"/>
+    }
+    else
+    {
+        <img src="@($"/Content/Images/Default-xs.png")" alt="@($"{Model.Name} Team Logo")" class="img-responsive" />
+    }
+    <h1>@($"{Model.Name}")</h1>
+</div>
+
+<div class="row">
+    <div class="col-sm-8">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2>Player Roster</h2>
+            </div>
+            <div class="list-group">
+                @foreach (Player p in Model.Players)
+                {
+                    <a href="/Player/Details/@p.PlayerId" class="list-group-item">@($"#{p.JerseyNumber} {p.LastName}, {p.FirstName}")</a>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4>Manager</h4>
+            </div>
+            <div class="panel-body details-box">
+                <div>@($"{Model.Manager.FirstName} {Model.Manager.LastName}")</div>
+            </div>
+        </div>
+    </div>
+</div>
+@*<p>
+    @Html.ActionLink("Edit", "Edit", new {id = Model.TeamId})
+    @Html.ActionLink("Back to Teams", "Teams", "Home")
+</p>*@

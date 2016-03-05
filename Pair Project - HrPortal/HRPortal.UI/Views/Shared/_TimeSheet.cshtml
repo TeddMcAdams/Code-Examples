@@ -1,0 +1,17 @@
+﻿@model HRPortal.Models.TimeSheet
+
+<tr>
+    <td class="col-xs-1 col-sm-1">
+        <form action="~/TimeSheet/Remove" method="post" class="form-horizontal">
+            <input name="TimeSheetId" type="hidden" value="@Model.TimeSheetId" />
+            <button type="submit" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove red"></span></button>
+        </form>
+    </td>
+    <td class="col-xs-1 col-sm-2">
+        @Model.Date.ToString("d")
+    </td>
+    <td class="col-xs-10 col-sm-3">
+        @Model.HoursWorked
+    </td>
+    <td class="col-xs-12 col-sm-6"></td>
+</tr>

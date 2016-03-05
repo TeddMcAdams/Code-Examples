@@ -1,0 +1,84 @@
+﻿@using HRPortal.Models
+@using HRPortal.UI.Models
+
+@model CategoryWithItsPoliciesVm
+@{
+    Category category = Model.Category;
+    List<Policy> policies = Model.Policies;
+}
+<div class="panel panel-default">
+
+    @if ((bool)ViewData["manage"])
+    {
+        <div class="panel-heading" id="@($"heading{category.CategoryId}")">
+            @if (category.CategoryId == 0)
+            {
+                <h2 class="panel-title">
+                    <span style="margin: 0 26px 0 25px;"></span>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#@($"collapse{category.CategoryId}")">@Model.Category.Title</a>
+                </h2>
+            }
+            else
+            {
+                <form action="/Category/Edit" method="post" class="form-horizontal">
+                    <input name="categoryId" type="hidden" value="@category.CategoryId"/>
+                    <input name="categoryToEdit.CategoryId" type="hidden" value="@category.CategoryId" />
+                    <div id="@($"displayCat{category.CategoryId}")" style="display: block">
+                        <div class="row">
+                            <span style="margin: 0 4px;"></span>
+                            <button type="submit" style="margin: 4px 0 4px 0;" formaction="~/Category/Remove" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove red"></span></button>
+
+                            <button type="button" onclick="toggleEdit('@($"displayCat{category.CategoryId}")', '@($"editCat{category.CategoryId}")');" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button>
+
+                            <h2 class="panel-title" style="display: inline;">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#@($"collapse{category.CategoryId}")">@Model.Category.Title</a>
+                            </h2>
+                        </div>
+                    </div>
+                    <div id="@($"editCat{category.CategoryId}")" style="display: none">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                                <button type="submit" class="btn btn-default btn-sm" style="margin-right: -1px;"><span class="glyphicon glyphicon-ok green"></span></button>
+                                            </span>
+                                    <input name="categoryToEdit.Title" class="form-control input-sm" value="@Model.Category.Title"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            }
+        </div>
+
+        <div id="@($"collapse{category.CategoryId}")" class="panel-collapse collapse">
+            <div class="panel-body">
+
+                
+
+
+                @foreach (var policy in policies)
+                {
+                    @Html.Partial("_Policy", policy)
+                }
+            </div>
+        </div>
+
+    }
+    else
+    {
+        <div class="panel-heading" id="@($"heading{category.CategoryId}")">
+            <h2 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#@($"collapse{category.CategoryId}")">@Model.Category.Title</a>
+            </h2>
+        </div>
+        <div id="@($"collapse{category.CategoryId}")" class="panel-collapse collapse" role="tabpanel">
+            <div class="panel-body">
+                @foreach (var policy in policies)
+                {
+                    @Html.Partial("_Policy", policy)
+                }
+            </div>
+        </div>
+    }
+</div>

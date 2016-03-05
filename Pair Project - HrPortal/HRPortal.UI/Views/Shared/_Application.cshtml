@@ -1,0 +1,83 @@
+﻿@model HRPortal.Models.Application
+
+<div class="panel panel-default">
+    <div class="panel-heading" id="@($"heading{Model.ApplicationId}")">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#@($"collapse{Model.ApplicationId}")"><strong>@Model.LastName, @Model.FirstName</strong></a>
+        </h4>
+    </div>
+    <div id="@($"collapse{Model.ApplicationId}")" class="panel-collapse collapse">
+
+        <div class="panel-body" style="display: block;" id="@($"displayApplication{Model.ApplicationId}")">
+
+            <label for="@($"displayWhyus{Model.ApplicationId}")" class="control-label col-xs-12 col-sm-2">Why Us?</label>
+            <div class="col-xs-12 col-sm-4">
+                <textarea id="@($"displayWhyus{Model.ApplicationId}")" class="form-control" readonly rows="6">@Model.WhyInterested</textarea>
+            </div>
+
+            <label for="@($"displayPhone{Model.ApplicationId}")" class="control-label col-xs-12 col-sm-2">Phone #</label>
+            <div class="col-xs-12 col-sm-4">
+                <input id="@($"displayPhone{Model.ApplicationId}")" class="form-control" value="@Model.Phone" readonly/>
+            </div>
+
+            <label for="@($"displayEmail{Model.ApplicationId}")" class="control-label col-xs-12 col-sm-2"><a href="@($"mailto:{Model.Email}")" target="_blank">Email</a></label>
+            <div class="col-xs-12 col-sm-4">
+                <input id="@($"displayEmail{Model.ApplicationId}")" class="form-control" value="@Model.Email" readonly/>
+            </div>
+
+            <label for="@($"displayLinkedIn{Model.ApplicationId}")" class="control-label col-xs-12 col-sm-2"><a href="@($"{ViewData["LiUrl"]}")" target="_blank">LinkedIn</a></label>
+            <div class="col-xs-12 col-sm-4">
+                <input id="@($"displayLinkedIn{Model.ApplicationId}")" class="form-control" value="@Model.LinkedIn" readonly/>
+            </div>
+            <div class="clearfix visible-sm visible-md visible-lg"></div>
+            <div class="col-xs-12 col-sm-offset-2">
+                <button onclick="toggleEdit('@($"displayApplication{Model.ApplicationId}")', '@($"editApplication{Model.ApplicationId}")');" class="btn btn-default">Edit</button>
+            </div>
+        </div>
+
+        <div class="panel-body" style="display: none" id="@($"editApplication{Model.ApplicationId}")">
+            @using (Html.BeginForm("Edit", "Application"))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.ApplicationId)
+
+                <label for="@($"editWhyus{Model.ApplicationId}")" class="control-label col-xs-12 col-sm-2">Why Us?</label>
+                <div class="col-xs-12 col-sm-4">
+                    <textarea id="@($"editWhyus{Model.ApplicationId}")" name="WhyInterested" class="form-control" rows="6">@Model.WhyInterested</textarea>
+                </div>
+
+                <label for="@($"editPhone{Model.ApplicationId}")" class="control-label col-xs-12 col-sm-2">Phone #</label>
+                <div class="col-xs-12 col-sm-4">
+                    <input id="@($"editPhone{Model.ApplicationId}")" name="Phone" class="form-control" value="@Model.Phone"/>
+                </div>
+
+                <label for="@($"editEmail{Model.ApplicationId}")" class="control-label col-xs-12 col-sm-2"><a href="@($"mailto:{Model.Email}")" target="_blank">Email</a></label>
+                <div class="col-xs-12 col-sm-4">
+                    <input id="@($"editEmail{Model.ApplicationId}")" name="Email" class="form-control" value="@Model.Email"/>
+                </div>
+
+                <label for="@($"editLinkedIn{Model.ApplicationId}")" class="control-label col-xs-12 col-sm-2"><a href="@($"{ViewData["LiUrl"]}")" target="_blank">LinkedIn</a></label>
+                <div class="col-xs-12 col-sm-4">
+                    <input id="@($"editLinkedIn{Model.ApplicationId}")" name="LinkedIn" class="form-control" value="@Model.LinkedIn"/>
+                </div>
+
+                <div class="clearfix visible-sm visible-md visible-lg"></div>
+
+                <label for="@($"editFirstName{Model.ApplicationId}")" class="control-label col-xs-12 col-sm-2">First Name</label>
+                <div class="col-xs-12 col-sm-4">
+                    <input id="@($"editFirstName{Model.ApplicationId}")" name="FirstName" class="form-control" value="@Model.FirstName"/>
+                </div>
+
+                <label for="@($"editLastName{Model.ApplicationId}")" class="control-label col-xs-12 col-sm-2">Last Name</label>
+                <div class="col-xs-12 col-sm-4">
+                    <input id="@($"editLastName{Model.ApplicationId}")" name="LastName" class="form-control" value="@Model.LastName"/>
+                </div>
+
+                <div class="col-xs-12 col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Save</button>
+                    <button type="submit" formaction="~/Application/Remove" class="btn btn-default">Remove</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

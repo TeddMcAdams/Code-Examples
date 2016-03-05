@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGI Ltd. - HR Portal - @ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href='https://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald|Cinzel' rel='stylesheet' type='text/css'>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("HR Portal", "Index", "Hr", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Applications<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/Hr/ViewApplications">View Applications</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Policies<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/Hr/ViewPolicies">View Policies</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="~/Hr/ManagePolicies">Manage Policies</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Time Tracker<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/Hr/ViewTimeSheets">View Timesheets</a></li>
+                        </ul>
+                    </li>                    <li>@Html.ActionLink("Employee", "Index", "Hourly")</li>
+                    <li>@Html.ActionLink("Public", "Index", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer class="welcomefoot">
+            <div class="copyright">
+                <p>&copy; @DateTime.Now.Year SG Industries Ltd.</p>
+            </div>
+            <div class="quote">"Maybe I am a monster. I don't think I'd know if I were one. I'm not what you are and not what you intended." - Vision</div>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

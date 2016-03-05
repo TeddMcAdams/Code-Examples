@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A. FlooringProgram.UI", "FlooringProgram.UI\A. FlooringProgram.UI.csproj", "{F92C6CA9-8D4A-4992-8DD1-828270EA1B29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C. FlooringProgram.Data", "FlooringProgram.Data\C. FlooringProgram.Data.csproj", "{6F50ADAF-FEC8-4021-8F55-2043D1CF6402}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D. FlooringProgram.Models", "FlooringProgram.Models\D. FlooringProgram.Models.csproj", "{90800820-4D7E-4E91-B3BF-37582DFE4708}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B. FlooringProgram.BLL", "FlooringProgram.BLL\B. FlooringProgram.BLL.csproj", "{9FCC6194-1A22-4618-B0A4-20E77450ACA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F. FlooringProgram.Tests", "FlooringProgram.Tests\F. FlooringProgram.Tests.csproj", "{34A725CF-6C46-4968-ABBE-99DC88CC1C90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E. FlooringProgram.Contracts", "FlooringProgram.Contracts\E. FlooringProgram.Contracts.csproj", "{7398A245-5FF6-40D5-B818-D0CE71AF17F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F92C6CA9-8D4A-4992-8DD1-828270EA1B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F92C6CA9-8D4A-4992-8DD1-828270EA1B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F92C6CA9-8D4A-4992-8DD1-828270EA1B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F92C6CA9-8D4A-4992-8DD1-828270EA1B29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F50ADAF-FEC8-4021-8F55-2043D1CF6402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F50ADAF-FEC8-4021-8F55-2043D1CF6402}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F50ADAF-FEC8-4021-8F55-2043D1CF6402}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F50ADAF-FEC8-4021-8F55-2043D1CF6402}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90800820-4D7E-4E91-B3BF-37582DFE4708}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90800820-4D7E-4E91-B3BF-37582DFE4708}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90800820-4D7E-4E91-B3BF-37582DFE4708}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90800820-4D7E-4E91-B3BF-37582DFE4708}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FCC6194-1A22-4618-B0A4-20E77450ACA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FCC6194-1A22-4618-B0A4-20E77450ACA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FCC6194-1A22-4618-B0A4-20E77450ACA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FCC6194-1A22-4618-B0A4-20E77450ACA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34A725CF-6C46-4968-ABBE-99DC88CC1C90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34A725CF-6C46-4968-ABBE-99DC88CC1C90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34A725CF-6C46-4968-ABBE-99DC88CC1C90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34A725CF-6C46-4968-ABBE-99DC88CC1C90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7398A245-5FF6-40D5-B818-D0CE71AF17F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7398A245-5FF6-40D5-B818-D0CE71AF17F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7398A245-5FF6-40D5-B818-D0CE71AF17F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7398A245-5FF6-40D5-B818-D0CE71AF17F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,69 @@
+﻿@model HRPortal.UI.Models.TimeSheetEntryVm
+
+@{
+    ViewBag.Title = "SubmitTime";
+    Layout = "~/Views/Shared/_Hourly.cshtml";
+}
+
+<form action="~/Hourly/SubmitTime" method="post" class="form-horizontal" id="applicationForm">
+
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal app">
+        <div class="apphead">
+            <h1 class="apptitle">TIMESHEET ENTRY FORM</h1>
+        </div>
+        <div class="row">
+            <div class="@($"alert {ViewData["alertType"]}")" style="@($"display: {ViewData["alertDisplay"]}")">
+                <h4 class="response">@ViewData["alertMsg"]</h4>
+            </div>
+        </div>
+        <div class="clearfix visible-xs visible-sm visible-md visible-lg"></div>
+        <hr/>
+        <div>
+            @Html.ValidationSummary(true)
+        </div>
+
+        <div class="form-group appform" style="margin-left: 15px;">
+            <label class="control-label col-lg-5 col-md-5 col-sm-4 col-xs-12" for="TimeEntry_EmployeeId">Select Your Name</label>
+            <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
+                @Html.ValidationMessageFor(model => model.TimeEntry.EmployeeId)
+                <select class="form-control timesheetInput" name="TimeEntry.EmployeeId" id="TimeEntry_EmployeeId">
+                    <option value="0">Select Your Name</option>
+                    @foreach (var employee in Model.Employees)
+                    {
+                        <option value="@employee.EmployeeId">@($"{employee.LastName}, {employee.FirstName}")</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group appform" style="margin-left: 15px;">
+            @Html.LabelFor(model => model.TimeEntry.Date, "Date", new {@class = "control-label col-lg-5 col-md-5 col-sm-4 col-xs-12"})
+            <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
+                @Html.ValidationMessageFor(model => model.TimeEntry.Date)
+                @Html.EditorFor(model => model.TimeEntry.Date, new {htmlAttributes = new {@class = "form-control datepicker input-validation-error timesheetInput"}})
+            </div>
+        </div>
+
+        <div class="form-group appform" style="margin-left: 15px;">
+            @Html.LabelFor(model => model.TimeEntry.HoursWorked, "Hours Worked", new {@class = "control-label col-lg-5 col-md-5 col-sm-4 col-xs-12"})
+            <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
+                @Html.ValidationMessageFor(model => model.TimeEntry.HoursWorked)
+                @Html.TextBoxFor(model => model.TimeEntry.HoursWorked, new {@class = "form-control input-validation-error text-box single-line input-hours"})
+            </div>
+        </div>
+
+        <div class="form-group appform" style="margin-left: 15px; margin-right: 15px; padding-right: 30px; width: 100%; text-align: center;">
+            <div class="col-md-12">
+                <input type="submit" value="SUBMIT MY TIME" class="btn btn-default btn-danger" style="font-size: 20px;"/>
+                <p class="submitRequire">All fields are required.</p>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+    
+
+</script>

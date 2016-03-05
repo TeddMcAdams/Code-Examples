@@ -1,0 +1,70 @@
+﻿@using System.Web.Hosting
+@using BaseballLeague.MODELS
+@using BaseballLeague.UI.Models
+@model PlayerDetailsVm
+
+@{
+    ViewBag.Title = $"Player Details - {Model.Player.LastName}, {Model.Player.FirstName}";
+    Team playerTeam = Model.Teams.First(t => t.TeamId == Model.Player.TeamId);
+}
+
+<div class="jumbotron">
+    @if (File.Exists(HostingEnvironment.MapPath($"/Content/images/{Model.Teams.First(t => t.TeamId == Model.Player.TeamId).Name}.png")))
+    {
+        <img src="@($"/Content/images/{playerTeam.Name}-xs.png")" alt="@($"{playerTeam.Name} Team Logo")" class="img-responsive"/>
+    }
+    else
+    {
+        <img src="@($"/Content/images/-xs.png")" alt="@($"{playerTeam.Name} Team Logo")" class="img-responsive" />
+    }
+    <h1>@($"{playerTeam.Name}")</h1>
+</div>
+
+<div class="row">
+    <div class="col-sm-8">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2>@($"#{Model.Player.JerseyNumber} {Model.Player.LastName}, {Model.Player.FirstName}")</h2>
+            </div>
+            <div class="list-group">
+                <a class="list-group-item">Position: <b>@($"{Model.Player.Position.Name}")</b></a>
+                <a class="list-group-item">@($"{DateTime.Now.Year - 1}") BA: <b>@Model.Player.BatAvgStr</b></a>
+                <a class="list-group-item">Rookie Year: <b>@($"{Model.Player.RookieYear}")</b></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4>Trade Player</h4>
+            </div>
+            <div class="panel-body details-box">
+                <form action="/Team/Trade" method="post">
+                    <input type="hidden" value="@Model.Player.PlayerId" name="PlayerId"/>
+                    @Html.LabelFor(m => m.TradeToTeamId, "Select Team")
+                    @Html.DropDownListFor(m => m.TradeToTeamId, Model.TeamSelectListItems)
+                    <button class="btn btn-default" type="submit">Start Trade</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4>Remove Player</h4>
+            </div>
+            <div class="panel-body details-box">
+                <form action="/Player/Delete">
+                    <input type="hidden" value="@Model.Player.PlayerId" name="PlayerId"/>
+                    <input type="hidden" value="@Model.Player.TeamId" name="TeamId"/>
+                    <button class="btn btn-default" type="submit">Remove</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.TeamId }) |*@
+    @Html.ActionLink("Back to Teams", "Teams", "Home")
+</p>

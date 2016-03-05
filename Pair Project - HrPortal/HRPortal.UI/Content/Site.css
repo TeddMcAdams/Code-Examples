@@ -1,0 +1,208 @@
+﻿body {
+    padding-top: 75px;
+    padding-bottom: 20px;
+    background-image: url(http://previews.123rf.com/images/maroti/maroti1407/maroti140701646/29811356-abandoned-old-vehicle-repair-station-Stock-Photo.jpg)
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.addNewPanel {
+    padding-bottom: 5px;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+/* Apply form */
+#form_Button {
+    font-size: 20px;
+}
+.alert {
+    margin: 0;
+    padding: 6px;
+}
+
+.response {
+    text-align: center;
+    font-family: 'Alfa Slab One', cursive;
+}
+
+.submitRequire {
+    padding-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: crimson;
+}
+
+.timesheetInput {
+    border: 1px solid #000;
+    width: 55%;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.input-hours {
+    border: 1px solid #000;
+    width: 15%;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* HR View Applications (ViewApplications.cshtml) */
+
+textarea {
+    -moz-resize: none;
+    -ms-resize: none;
+    -o-resize: none;
+    resize: none;
+}
+
+.panel-body div {
+    padding-bottom: 6px;
+}
+.panel-body label {
+    font-size: 0.9em;
+    padding-top: 6px;
+    text-align: right;
+}
+@media(max-width:767px){
+    .panel-body label {
+        padding-left: 20px;
+        text-align: left;
+    }
+}
+
+/* HR View Policies */
+
+.panel-heading h3 {
+    font-size: 1.2em;
+}
+
+.panel-heading h2 {
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+.sgi {
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 30px;
+}
+
+.apphead {
+    text-align: center;
+    padding-top: 25px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.applicant {
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.panel-group {
+    font-family: Verdana, sans-serif;
+}
+
+.apptitle {
+    font-family: 'Alfa Slab One', cursive;
+}
+
+.tagline {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    letter-spacing: 5px;
+}
+
+.jumbotron {
+    text-align: center;
+}
+
+.welcome {
+    background-color: #fff;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 5px;
+    padding: 50px;
+}
+
+
+.welcomeapplicant {
+    background-color: #fff;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 5px;
+    padding: 0 50px 50px 50px;
+}
+
+.welcomefoot {
+    background-color: #fff;
+    /*font-family: 'Cinzel', serif;*/
+    /*font-size: 30px;*/
+    border-radius: 5px;
+    padding: 20px 10px 40px 10px;
+}
+
+.copyright {
+    float: left;
+}
+.quote {
+    float: right;
+    font-style: italic;
+}
+
+.app {
+    background-color: #fff;
+    border-radius: 5px;
+    padding-bottom: 50px;
+    font-size: 20px;
+}
+
+.appform {
+    /*border: 1px solid black;*/
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    width: 97%;
+    /*margin-left: 50px;*/
+    /*margin-right: auto;*/
+    /*padding-left: 50px;*/
+}
+
+.policy {
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.poltitle {
+    font-family: 'Alfa Slab One', cursive;
+}
+
+
+
+
+
+/*font-family: 'Oswald', sans-serif;
+
+font-family: 'Cinzel', serif;*/
+

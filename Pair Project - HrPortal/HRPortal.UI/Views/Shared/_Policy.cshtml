@@ -1,0 +1,62 @@
+﻿@model HRPortal.Models.Policy
+
+<div class="panel panel-info">
+    @if ((bool)ViewData["manage"])
+    {
+        <div class="panel-heading">
+            <form action="/Policy/Edit" method="post" class="form-horizontal">
+                <input name="policyId" type="hidden" value="@Model.PolicyId" />
+                <div id="@($"displayPolName{Model.PolicyId}")">
+                    <div class="row" style="margin-bottom: -10px;">
+                        <span style="margin: 0 4px;"></span>
+                        <button type="submit" style="margin: 4px 0 4px 0;" formaction="~/Policy/Remove" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove red"></span></button>
+
+                        <button type="button" onclick="toggleEdit('@($"displayPolName{Model.PolicyId}")', '@($"editPolName{Model.PolicyId}")');" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button>
+
+                        <h3 class="panel-title" style="display: inline">@Model.Title</h3>
+                    </div>
+                </div>
+
+                <div id="@($"editPolName{Model.PolicyId}")" style="display: none">
+                    <input name="PolicyId" type="hidden" value="@Model.PolicyId"/>
+                    <input name="CategoryId" type="hidden" value="@Model.CategoryId"/>
+                    <input name="Content" type="hidden" value="@Model.Content"/>
+                    <div class="row" style="margin-bottom: -10px;">
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-default btn-sm" style="margin-right: -1px;"><span class="glyphicon glyphicon-ok green"></span></button>
+                                </span>
+                                <input name="Title" class="form-control input-sm" value="@Model.Title"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="panel-body">
+            <form action="~/Policy/Edit" method="post" class="form-horizontal">
+
+                <div id="@($"displayPolDescription{Model.PolicyId}")">
+                    <textarea class="form-control" rows="6" readonly>@Model.Content</textarea>
+                    <button style="margin-top: -1px;" type="button" onclick="toggleEdit('@($"displayPolDescription{Model.PolicyId}")', '@($"editPolDescription{Model.PolicyId}")');" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
+                </div>
+
+                <div id="@($"editPolDescription{Model.PolicyId}")" style="display: none">
+                    <input name="PolicyId" type="hidden" value="@Model.PolicyId" />
+                    <input name="CategoryId" type="hidden" value="@Model.CategoryId" />
+                    <input name="Title" type="hidden" value="@Model.Title" />
+                    <textarea name="Content" class="form-control" rows="6">@Model.Content</textarea>
+                    <button style="margin-top: -1px;" type="submit" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-ok green"></span></button>
+                </div>
+            </form>
+        </div>
+    }
+    else
+    {
+        <div class="panel-heading">
+            <h3 class="panel-title">@Model.Title</h3>
+        </div>
+        <div class="panel-body">@Model.Content</div>
+    }
+</div>

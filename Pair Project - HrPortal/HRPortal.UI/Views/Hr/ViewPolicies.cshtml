@@ -1,0 +1,24 @@
+﻿@using HRPortal.UI.Models
+
+@model List<CategoryWithItsPoliciesVm>
+
+@{
+    ViewBag.Title = "Policies";
+    Layout = "~/Views/Shared/_Internal.cshtml";
+    ViewData["manage"] = false;
+}
+
+<div class="panel-group" id="accordion">
+    <div class="policy">
+        <h1 class="poltitle">POLICIES</h1>
+    </div>
+
+    @foreach (CategoryWithItsPoliciesVm cwp in Model)
+    {
+        if (cwp.Policies.Count > 0)
+        {
+            @Html.Partial("_Category", cwp)
+        }
+    }
+    
+</div>

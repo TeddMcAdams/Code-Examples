@@ -1,0 +1,48 @@
+﻿@model HRPortal.UI.Models.EmployeeAndTimeSheetsVm
+
+<div class="panel panel-default">
+    <div class="panel-heading" id="@($"heading{Model.Employee.EmployeeId}")">
+        <h2 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#@($"collapse{Model.Employee.EmployeeId}")">@($"{Model.Employee.LastName}, {Model.Employee.FirstName}")</a>
+        </h2>
+    </div>
+    <div class="panel-collapse collapse" id="@($"collapse{Model.Employee.EmployeeId}")">
+        <div class="panel-body">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="col-xs-12">
+                        <h4>EMPLOYEE SUMMARY</h4>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        Employee ID: @Model.Employee.EmployeeId
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        Hire Date: @Model.Employee.DateHired.ToString("d")
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        Total Hours To Date: @Model.TimeSheets.Select(h => h.HoursWorked).Sum()
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th class="col-xs-1 col-sm-1"></th>
+                    <th class="col-xs-1 col-sm-2">DATE</th>
+                    <th class="col-xs-10 col-sm-3">HOURS WORKED</th>
+                    <th class="col-xs-12 col-sm-6"></th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var timeSheet in Model.TimeSheets)
+                {
+                    @Html.Partial("_TimeSheet", timeSheet)
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

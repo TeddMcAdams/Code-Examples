@@ -1,0 +1,63 @@
+﻿@using System.Web.Hosting
+@using BaseballLeague.MODELS
+@using BaseballLeague.UI.Models
+@model TradePlayerVm
+
+@{
+    ViewBag.Title = $"Player Trade - {Model.Player.LastName}, {Model.Player.FirstName}";
+}
+
+<div class="jumbotron">
+    @if (File.Exists(HostingEnvironment.MapPath($"/Content/Images/{Model.PlayersCurrTeam.Name}-xs.png")))
+    {
+        <img src="@($"/Content/Images/{Model.PlayersCurrTeam.Name}-xs.png")" alt="@($"{Model.PlayersCurrTeam.Name} Team Logo")" class="img-responsive"/>
+    }
+    else
+    {
+        <img src="@($"/Content/images/-xs.png")" alt="@($"{Model.PlayersCurrTeam.Name} Team Logo")" class="img-responsive"/>
+    }
+    <h1>@($"{Model.PlayersCurrTeam.Name}")</h1>
+</div>
+
+<div class="row">
+    <div class="alert alert-warning col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8">@($"Trading {Model.Player.FirstName} {Model.Player.LastName} ({Model.Player.Position.Abbreviation}) to the {Model.TradeToTeam.Name}.")</div>
+</div>
+
+<div class="row">
+    <div class="col-sm-8">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2>@($"{Model.TradeToTeam.Name} - Player Roster")</h2>
+            </div>
+            <div class="list-group">
+                @foreach (Player p in Model.TradeToTeam.Players)
+                {
+                    <a class="list-group-item">@($"#{p.JerseyNumber} {p.LastName}, {p.FirstName} ({p.Position.Abbreviation})")</a>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4>Trade For:</h4>
+            </div>
+            <div class="panel-body details-box">
+                <form action="/Player/Trade" method="post">
+                    <input type="hidden" value="@Model.Player.PlayerId" name="PlayerId"/>
+                    <input type="hidden" value="@Model.PlayersCurrTeam.TeamId" name="PlayerTeamId"/>
+                    <input type="hidden" value="@Model.TradeToTeam.TeamId" name="TradeToTeamId"/>
+                    @Html.LabelFor(m => m.PlayerToTradeForId, "Select Player")
+                    @Html.DropDownListFor(m => m.PlayerToTradeForId, Model.PlayerSelectListItems)
+                    <button class="btn btn-default" type="submit">Make Trade</button>
+                    <a href="/Team/Details/@(Model.PlayersCurrTeam.TeamId)" class="btn btn-default">Cancel Trade</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.TeamId }) |*@
+    @Html.ActionLink("Back to Teams", "Teams", "Home")
+</p>

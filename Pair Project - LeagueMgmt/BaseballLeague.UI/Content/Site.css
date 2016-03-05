@@ -1,0 +1,199 @@
+﻿body {
+    padding-top: 55px;
+    padding-bottom: 5px;
+    background-image: url("/Content/images/baseballbackground.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -ms-background-size: cover;
+    background-size: cover;
+    background-color: #464646;
+}
+
+@media(min-width:992px) {
+     .game-info {
+    text-align: center !important;
+    }
+     .game-info-time {
+    text-align: center !important;
+    }
+}
+
+@media (max-width:767px) {
+     .container { max-width: 400px; }
+     body {
+         background-image: url("/Content/images/baseballbackground(sm).jpg");
+     }
+     .event {
+         font-size: 16px !important;
+     }
+     .game-info {
+    text-align: center !important;
+    }
+     .game-info-time {
+    text-align: center !important;
+    }
+}
+
+.details-box {
+    margin: 16px 8px;
+    font-weight: bold;
+}
+
+.carousel-control {
+    background: none !important;
+    -webkit-filter: none !important;
+    -moz-filter: none !important;
+    -o-filter: none !important;
+    filter: none !important;
+}
+
+.carousel {
+    margin: 20px 0 0 0;
+}
+
+.carousel-inner div img, #seasontickets {
+    margin: auto;
+    width: 90%;
+}
+
+#seasontickets {
+    margin: 40px auto 30px auto;
+}
+
+.body-content {
+    border: solid 1px #000;
+    border-radius: 5px;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, .25)
+}
+
+.panel-primary {
+    border: solid 1px #000;
+}
+
+.panel .panel-body {
+    padding: 0 16px;
+}
+
+.panel-primary .panel-heading, .list-group .active {
+    border-color: #000;
+    background-color: #000;
+    background-image: linear-gradient(to bottom,#800000 0,#000 85%);
+}
+
+.list-group-item.active:hover {
+    background-image: linear-gradient(to bottom,#BF0000 0,#000 85%);
+    
+}
+
+
+.jumbotron {
+    border: solid 1px #000;
+    background-color: #fff;
+    padding: 10px 0 10px 0;
+    margin: 0 0 16px 0;
+    text-align: center;
+}
+
+.jumbotron img {
+    width: 10%;
+    -moz-min-width: 50px;
+    -ms-min-width: 50px;
+    -o-min-width: 50px;
+    -webkit-min-width: 50px;
+    min-width: 50px;
+    display: inline;
+}
+
+.jumbotron h1 {
+    vertical-align: middle;
+    font-family: 'Racing Sans One', cursive;
+    color: #800000;
+    width: 90%;
+    display: inline;
+}
+
+.event {
+    font-size: 20px;
+    border: solid 1px #000;
+    border-radius: 5px;
+    padding: 10px 10px 0 10px;
+    margin: 16px 0px;
+}
+
+.event-title {
+    font-family: 'Racing Sans One', cursive;
+    font-size: 24px;
+    color: #ff0000;
+}
+
+.event-courtesy {
+    font-size: 13px;
+}
+
+.games {
+    font-size: 18px;
+    border: solid 1px #000;
+    border-radius: 5px;
+    padding: 10px 10px 0 10px;
+    margin: 16px 0px;   
+}
+
+
+.game-date {
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+}
+.game-info {
+    text-align: right;
+}
+
+.game-info-time {
+    text-align: left;
+}
+
+.list-group {
+    cursor: default;
+}
+
+
+
+
+
+.footer {
+    background-color: #fff;
+    padding: 15px 15px 5px 15px;
+    
+    border-radius: 5px;
+    border: solid 1px #000;
+}
+
+.footer-left {
+    float: left;
+}
+
+.lmname {
+    font-family: Times New Roman, serif;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.code2name {
+    font-weight: bold;
+    color: blue;
+}
+
+.sginame {
+    font-family: 'Alfa Slab One', cursive;
+}
+
+.footer-right {
+    min-height: 50px;
+    text-align: right;
+    padding-top: 15px;
+}
+/*font-family: 'Racing Sans One', cursive;*/
+/*font-family: 'Lobster', cursive;*/

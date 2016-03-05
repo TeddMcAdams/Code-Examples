@@ -1,0 +1,106 @@
+﻿@using BaseballLeague.UI.Models
+@model CreatePlayerVm
+
+@{
+    ViewBag.Title = "Create Player";
+}
+
+<div class="jumbotron">
+    <h1>Ohio Baseball League - Players</h1>
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading" style="text-align:center;">
+        <h2>New Player Entry Form</h2>
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm())
+
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <hr />
+                <div>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.PlayerToAdd.FirstName, "First Name", new { @class = "control-label col-xs-12 col-sm-4 col-md-5" })
+                    <div class="col-xs-12 col-sm-6 col-md-7">
+                        @Html.EditorFor(model => model.PlayerToAdd.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.PlayerToAdd.FirstName, "", new { @class = "text-danger  input-validation-error text-box single-line" })
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.PlayerToAdd.LastName, "Last Name", new { @class = "control-label col-xs-12 col-sm-4 col-md-5" })
+                    <div class="col-xs-12 col-sm-6 col-md-7">
+                        @Html.EditorFor(model => model.PlayerToAdd.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.PlayerToAdd.LastName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.PlayerToAdd.JerseyNumber, "Jersey Number", new { @class = "control-label col-xs-12 col-sm-4 col-md-5" })
+                    <div class="col-xs-12 col-sm-6 col-md-7">
+                        @Html.EditorFor(model => model.PlayerToAdd.JerseyNumber, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.PlayerToAdd.JerseyNumber, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.PlayerToAdd.RookieYear, "Rookie Year", new { @class = "control-label col-xs-12 col-sm-4 col-md-5" })
+                    <div class="col-xs-12 col-sm-6 col-md-7">
+                        @Html.EditorFor(model => model.PlayerToAdd.RookieYear, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.PlayerToAdd.RookieYear, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.PlayerToAdd.LastSeasonBatAvg, "Last Season's BA", new { @class = "control-label col-xs-12 col-sm-4 col-md-5" })
+                    <div class="col-xs-12 col-sm-6 col-md-7">
+                        @Html.EditorFor(model => model.PlayerToAdd.LastSeasonBatAvg, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.PlayerToAdd.LastSeasonBatAvg, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="control-label col-xs-12 col-sm-4 col-md-5" for="PlayerToAdd_Position_PositionId">Player Position</label>
+                    <div class="col-xs-12 col-sm-6 col-md-7">
+                        <select class="form-control" name="PlayerToAdd.Position.PositionId" id="PlayerToAdd_Position_PositionId">
+                            <option value="0">Select Position</option>
+                            @foreach (var position in Model.AllPositions)
+                            {
+                                <option value="@position.PositionId">@($"{position.Name}")</option>
+                            }
+                        </select>
+                        @Html.ValidationMessageFor(model => model.PlayerToAdd.Position.PositionId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="control-label col-xs-12 col-sm-4 col-md-5" for="PlayerToAdd_TeamId">Team Assigned</label>
+                    <div class="col-xs-12 col-sm-6 col-md-7">
+                        <select class="form-control" name="PlayerToAdd.TeamId" id="PlayerToAdd_TeamId">
+                            <option value="0">Select Team</option>
+                            @foreach (var team in Model.AllTeams)
+                            {
+                                <option value="@team.TeamId">@($"{team.Name}")</option>
+                            }
+                        </select>
+                        @Html.ValidationMessageFor(model => model.PlayerToAdd.TeamId, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <div class="col-xs-12 col-sm-offset-4 col-md-offset-5 col-md-7">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
+@section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+}

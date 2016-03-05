@@ -1,0 +1,51 @@
+﻿@using System.Web.Hosting
+@using BaseballLeague.MODELS
+@model List<Team>
+
+@{
+    ViewBag.Title = "Teams";
+}
+
+<div class="jumbotron">
+    <h1>Ohio Baseball League - Teams</h1>
+</div>
+
+@*<div class="row">
+    @foreach (Team t in Model)
+    {
+        <div class="col-md-6" style="text-align: center;">
+            <a href="@($"/Team/Details/{t.TeamId}")">
+                @if (File.Exists(HostingEnvironment.MapPath($"/Content/images/{t.Name}.png")))
+                {
+                    <img src="@($"/Content/images/{t.Name}.png")" alt="@($"{t.Name} Team Logo")"/>
+                }
+                else
+                {
+                    <img src="@($"/Content/images/Default.png")" alt="@($"{t.Name} Team Logo")"/>
+                }
+                <h2>@t.Name</h2>
+            </a>
+        </div>
+    }
+</div>*@
+
+<div class="row">
+@foreach (Team t in Model)
+{
+    <div class="col-md-6" style="text-align: center;">
+        <div class="list-group">
+            <a href="/Team/Details/@(t.TeamId)" class="list-group-item active"><b>@($"{t.Name}")</b></a>
+            <a href="@($"/Team/Details/{t.TeamId}")" class="list-group-item">
+                @if (File.Exists(HostingEnvironment.MapPath($"/Content/images/{t.Name}.png")))
+                {
+                    <img src="@($"/Content/images/{t.Name}.png")" alt="@($"{t.Name} Team Logo")" />
+                }
+                else
+                {
+                    <img src="@($"/Content/images/Default.png")" alt="@($"{t.Name} Team Logo")" />
+                }
+            </a>
+        </div>
+    </div>
+}
+</div>
